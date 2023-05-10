@@ -1,0 +1,9 @@
+@use "../abstracts/" as *;
+
+input {
+  width: 6.875rem;
+  padding: 0.5rem;
+  border: 0;
+  border-radius: size(8);
+  font-size: size(14);
+}

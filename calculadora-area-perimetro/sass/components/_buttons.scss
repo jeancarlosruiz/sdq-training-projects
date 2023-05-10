@@ -1,0 +1,28 @@
+@use "../abstracts/" as *;
+
+.button {
+  // Some default removed from the btn.
+  display: inline-flex;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 1;
+  border: 0;
+  transition: 275ms ease;
+  padding: 1em;
+  font-weight: $fw-700;
+  font-size: size(14);
+  width: fit-content;
+
+  &[data-type="accent"] {
+    background-color: clr(primary, 400);
+    color: clr(neutral, 900);
+    border-radius: 1rem;
+    letter-spacing: 1px;
+  }
+
+  &:is(:hover, :focus) {
+    background-color: clr(neutral, 100);
+    color: clr(neutral, 900);
+  }
+}

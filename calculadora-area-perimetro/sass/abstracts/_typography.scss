@@ -1,0 +1,23 @@
+// Diferentes font-sizes que tendran lugar en el folder utilities para crear clases que podremos usar dentro de nuestro html.
+
+// Font-family
+$ff-sans: "Roboto Mono", monospace;
+
+$ff-base: $ff-sans;
+
+//Font-sizes
+
+$font-sizes: (
+  900: clamp(2.5rem, 0.5rem + 10vw, 5rem),
+  800: clamp(1.8rem, 0.5rem + 7vw, 3rem),
+  600: clamp(1.4rem, 0.5rem + 3vw, 1.6875rem),
+  500: 1.3125rem,
+  400: 1.125rem,
+  300: 0.75rem,
+);
+
+//Font-weights
+
+$fw-400: 400;
+$fw-500: 500;
+$fw-700: 700;

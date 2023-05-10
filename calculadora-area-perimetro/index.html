@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/sass/main.scss" />
+    <title>Calculadora Geometrica</title>
+  </head>
+  <body>
+    <header class="header | container mx-auto">
+      <h1 class="fw-bold fs-800 clr-primary-400 text-center">
+        Calculadora Geometrica 🧮
+      </h1>
+    </header>
+    <main class="main grid-main | container mx-auto">
+      <div class="wrapper box-shadow-5">
+        <h2 class="title | fs-600">Triangulo</h2>
+        <div class="flex-group-1">
+          <!-- A = (b * h) / 2 -->
+          <h3>Area:</h3>
+          <div class="flex-group-2">
+            <input class="tr-area-base" type="number" placeholder="Base" />
+            <span>×</span>
+            <input class="tr-area-height" type="number" placeholder="Altura" />
+            <span>/ 2</span>
+            <button class="button btn-tr-area" data-type="accent">
+              Calcular
+            </button>
+          </div>
+          <p class="result-trgl-area"></p>
+        </div>
+
+        <div class="flex-group-1">
+          <!-- P = L + L + L -->
+          <h3>Perimetro:</h3>
+          <div class="flex-group-2">
+            <input class="tr-side-1" type="number" placeholder="Lado" />
+            <span>+</span>
+            <input class="tr-side-2" type="number" placeholder="Lado" />
+            <span>+</span>
+            <input class="tr-side-3" type="number" placeholder="Lado" />
+            <button class="button btn-tr-per" data-type="accent">
+              Calcular
+            </button>
+          </div>
+          <p class="result-trgl-per"></p>
+        </div>
+      </div>
+
+      <div class="wrapper box-shadow-5">
+        <h2 class="title | fs-600">Cuadrado</h2>
+        <div class="flex-group-1">
+          <!-- A = L * L -->
+          <h3>Area:</h3>
+          <div class="flex-group-2">
+            <input class="sq-area-1" type="number" placeholder="Lado" />
+            <span>×</span>
+            <input class="sq-area-2" type="number" placeholder="Lado" />
+            <button class="button btn-sq-area" data-type="accent">
+              Calcular
+            </button>
+          </div>
+          <p class="result-sq-area"></p>
+        </div>
+
+        <div class="flex-group-1">
+          <!-- P = 4L -->
+          <h3>Perimetro:</h3>
+          <div class="flex-group-2">
+            <p>4 ×</p>
+            <input class="sides" type="number" placeholder="Lado" />
+            <button class="button btn-sq-per" data-type="accent">
+              Calcular
+            </button>
+          </div>
+          <p class="result-sq-per"></p>
+        </div>
+      </div>
+
+      <div class="wrapper box-shadow-5">
+        <h2 class="title | fs-600">Rectangulo</h2>
+        <div class="flex-group-1">
+          <!-- A = b * a.-->
+          <h3>Area:</h3>
+          <div class="flex-group-2">
+            <input class="rect-base-1" type="number" placeholder="Base" />
+            <span>×</span>
+            <input class="rect-height-1" type="number" placeholder="Altura" />
+            <button class="button btn-rect-area" data-type="accent">
+              Calcular
+            </button>
+          </div>
+          <p class="result-rect-area"></p>
+        </div>
+
+        <div class="flex-group-1">
+          <!-- P = 2a + 2b. -->
+          <h3>Perimetro:</h3>
+          <div class="flex-group-2">
+            <p>
+              2 (<input
+                class="rect-base-2"
+                type="number"
+                placeholder="Altura"
+              />)
+            </p>
+            <span>×</span>
+            <p>
+              2 (<input
+                class="rect-height-2"
+                type="number"
+                placeholder="Base"
+              />)
+            </p>
+
+            <button class="button btn-rect-per" data-type="accent">
+              Calcular
+            </button>
+          </div>
+          <p class="result-rect-per"></p>
+        </div>
+      </div>
+
+      <div class="wrapper box-shadow-5">
+        <h2 class="title | fs-600">Circulo</h2>
+        <div class="flex-group-1">
+          <!--A = π * r^2-->
+          <h3>Area:</h3>
+          <div class="flex-group-2">
+            <p>π</p>
+            <span>×</span>
+            <p>
+              (<input class="cir-radio" type="number" placeholder="Radio" /> ^2)
+            </p>
+            <button class="button cir-area-btn" data-type="accent">
+              Calcular
+            </button>
+          </div>
+          <p class="result-cir-area"></p>
+        </div>
+
+        <div class="flex-group-1">
+          <!-- P = D * π. -->
+          <h3>Perimetro:</h3>
+          <div class="flex-group-2">
+            <input class="cir-diameter" type="number" placeholder="Diametro" />
+            <span>×</span>
+            <span>π</span>
+
+            <button class="button cir-per-btn" data-type="accent">
+              Calcular
+            </button>
+          </div>
+          <p class="result-cir-per"></p>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

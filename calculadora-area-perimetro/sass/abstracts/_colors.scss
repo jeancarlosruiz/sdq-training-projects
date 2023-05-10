@@ -1,0 +1,14 @@
+// Incluye un sass map donde podremos nombrar y crear variables personalizadas en cada proyecto.
+
+$colors: (
+  neutral: (
+    900: #232946,
+    200: #f8f8f8,
+    100: #fffffe,
+  ),
+  primary: (
+    400: #eebbc3,
+    500: #b8c1ec,
+    800: #232946,
+  ),
+);
