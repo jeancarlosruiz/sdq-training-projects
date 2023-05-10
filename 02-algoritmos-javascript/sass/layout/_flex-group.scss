@@ -1,0 +1,17 @@
+@use "../abstracts/" as *;
+
+// Esto puede ser de mucha ayuda a la hora de crear botones y navegations.
+
+.flex-group-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: size(16);
+}
+
+.flex-group-2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: size(10);
+}
