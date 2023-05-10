@@ -10,6 +10,6 @@ Actividades a realizadas
 
 ## Actividades ⬇️
 
-| Número | Proyecto               | Código                                                      | Web                                                        |
-| ------ | ---------------------- | ----------------------------------------------------------- | ---------------------------------------------------------- |
-| `01`   | Calculadora Geometrica | [Ver](sdq-training-projects/01-calculadora-area-perimetro/) | [Visitar](https://calculadora-geometrica-sdq.netlify.app/) |
+| Número | Proyecto               | Código                                                                                                 | Web                                                        |
+| ------ | ---------------------- | ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------- |
+| `01`   | Calculadora Geometrica | [Ver](https://github.com/jeancarlosruiz/sdq-training-projects/tree/main/01-calculadora-area-perimetro) | [Visitar](https://calculadora-geometrica-sdq.netlify.app/) |
