@@ -17,7 +17,7 @@ Actividades a realizadas
 
 ## Contenido:
 
-- [instalación](#instalación)
+- [Instalación](#instalación)
 - [Herramientas Utilizadas](#herramientas-utilizadas)
   - [Vite](#vite)
   - [SASS](#sass)
