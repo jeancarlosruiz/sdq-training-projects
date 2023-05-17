@@ -1,0 +1,33 @@
+@use '../abstracts/' as *;
+.main {
+  margin-block-end: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: size(16);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-block: size(14);
+  padding-inline: size(16);
+  border-radius: size(10);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.select {
+  cursor: pointer;
+  text-transform: uppercase;
+  line-height: 1;
+  border: 0;
+  padding: 1em;
+  font-weight: $fw-700;
+  font-size: size(14);
+  width: fit-content;
+}

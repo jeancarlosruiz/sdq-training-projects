@@ -14,9 +14,176 @@
     <title>Algoritmos Javascript</title>
   </head>
   <body>
-    <header>
-      <h1>Prueba de Algoritmo Javascript</h1>
+    <header class="header container mx-auto">
+      <h1 class="fw-bold fs-800 text-center">Prueba de Algoritmo Javascript</h1>
     </header>
+    <main class="container mx-auto">
+      <form class="form margin-block-start-24" action="#">
+        <select class="select text-center" name="#" id="select">
+          <option value=" ">-- Escoge una opcion --</option>
+          <option value="Distancia">Calcular la distancia</option>
+          <option value="Tiempo">Calcular el tiempo</option>
+          <option value="Velocidad">Calcular la velocidad</option>
+          <option value="table">Tabla de multiplicar</option>
+          <option value="morse">Texto en codigo morse</option>
+          <option value="text">Codigo morse a texto</option>
+          <option value="odd">Numeros primos</option>
+          <option value="binario">Numeros entero a binarios</option>
+          <option value="descendente">
+            Secuencias de numeros en orden descendente
+          </option>
+          <option value="ascendente">
+            Secuencias de numeros en orden ascendente
+          </option>
+          <option value="odd-even">Numeros pares e impares</option>
+        </select>
+        <div class="wrapper hidden">
+          <h2 class="sub-title"></h2>
+        </div>
+        <p class="result hidden">Resultado:</p>
+        <!-- <div class="hidden">
+          <h3 class="sub-title"></h3>
+          <input class="input" type="number" />
+          <input class="input" type="number" />
+          <button class="button" type="submit">Calcular</button>
+        </div> -->
+      </form>
+
+      <!-- <div class="wrapper">
+        <h3>
+          4. Algoritmo que me permita escribir un número y muestre la tabla de
+          multiplicar de ese número (1 - 12).
+        </h3>
+        <div class="flex-group-1">
+          <input
+            class="times-table"
+            type="number"
+            placeholder="numero 1 - 12"
+          />
+          <button class="button" type="submit">Submit</button>
+        </div>
+        <ul class="result-list"></ul>
+      </div>
+
+      <div class="wrapper">
+        <h3>5. Algoritmo para transformar texto en Código Morse.</h3>
+        <div class="flex-group-1">
+          <input class="morse-code" type="text" placeholder="texto" />
+          <button class="button">Submit</button>
+        </div>
+        <p class="result-morse"></p>
+      </div>
+
+      <div class="wrapper">
+        <h3 for="codigo-morse1">
+          6. Algoritmo para transformar Código Morse en texto.
+        </h3>
+        <div class="flex-group-1">
+          <input class="text-code" type="text" placeholder="morse" />
+          <button class="button">Submit</button>
+        </div>
+        <p class="result-text"></p>
+      </div>
+
+      <div class="wrapper">
+        <h3>
+          9. Algoritmo que me permita escribir un número y me retorne una lista
+          de los números primos desde cero hasta el número indicado.
+        </h3>
+        <div class="flex-group-1">
+          <input
+            class="odd-number-input"
+            type="text"
+            placeholder="ingresa numero"
+          />
+          <button class="button ood-btn">Submit</button>
+        </div>
+        <p class="result-odd-container"></p>
+      </div>
+
+      <div class="wrapper">
+        <h3 for="binary-num">
+          10. Algoritmo que me permita escribir un número decimal y me retorne
+          el número convertido en binario. (int = 50; out = 110010)
+        </h3>
+        <div class="flex-group-1">
+          <input
+            class="binary-num-input"
+            type="text"
+            placeholder="ingresa numero"
+          />
+          <button class="button binary-btn">Submit</button>
+        </div>
+        <p class="binary-result"></p>
+      </div>
+
+      <div class="wrapper">
+        <h3>
+          11. Algoritmo que me permita escribir un número y me retorne una lista
+          de números desde 1 hasta el número indicado (int = 5; out = 1, 2, 3,
+          4, 5).
+        </h3>
+        <div class="flex-group-1">
+          <input
+            class="num-list-input"
+            type="text"
+            placeholder="ingresa numero"
+          />
+          <button class="button num-list-btn">Submit</button>
+        </div>
+        <p class="num-list-result"></p>
+      </div>
+
+      <div class="wrapper">
+        <h3>
+          12. Algoritmo que me permita escribir un número y me retorne una lista
+          de números desde el número indicado hasta 1 (int = 5; out = 5, 4, 3,
+          2, 1).
+        </h3>
+        <div class="flex-group-1">
+          <input
+            class="num-list-input2"
+            type="text"
+            placeholder="ingresa numero"
+          />
+          <button class="button num-list-btn2">Submit</button>
+        </div>
+        <p class="num-list-result2"></p>
+      </div>
+
+      <div class="wrapper">
+        <h3>
+          13. Algoritmo que me permita escribir un número y me retorne una lista
+          de números desde 1 hasta el número indicado separando pares e impares.
+        </h3>
+        <div class="flex-group-1">
+          <input
+            class="num-list-input3"
+            type="text"
+            placeholder="ingresa numero"
+          />
+          <button class="button num-list-btn3">Submit</button>
+        </div>
+        <p class="num-list-result3"></p>
+      </div>
+
+      <div class="wrapper">
+        <h3>
+          14. Algoritmo que me permita escribir un número y me retorne una lista
+          de números desde el número indicado hasta 1 separando pares e impares.
+          (int = 5; outOdd = 5, 3, 1; outEven = 4, 2)
+        </h3>
+        <div class="flex-group-1">
+          <input
+            class="num-list-input4"
+            type="text"
+            placeholder="ingresa numero"
+          />
+          <button class="button num-list-btn4">Submit</button>
+        </div>
+        <p class="num-list-result4"></p>
+      </div> -->
+    </main>
     <script type="module" src="/js/main.js"></script>
   </body>
 </html>
