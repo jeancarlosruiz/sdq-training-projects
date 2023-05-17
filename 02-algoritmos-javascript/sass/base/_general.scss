@@ -1,6 +1,8 @@
 @use '../abstracts/' as *;
 
 body {
+  position: relative;
+  min-height: 100vh;
   font-family: $ff-base;
   font-weight: $fw-400;
   font-size: fs(400);

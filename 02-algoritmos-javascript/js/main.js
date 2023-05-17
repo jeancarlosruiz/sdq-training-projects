@@ -1,3 +1,5 @@
+import './attribution';
+
 const select = document.querySelector('.select');
 const form = document.querySelector('.form');
 const input1 = document.createElement('input');

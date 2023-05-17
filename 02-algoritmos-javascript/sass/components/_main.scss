@@ -1,6 +1,7 @@
 @use '../abstracts/' as *;
 .main {
   margin-block-end: 1rem;
+  min-height: 100vh;
 }
 
 .form {
