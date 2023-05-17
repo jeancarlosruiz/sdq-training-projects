@@ -11,11 +11,17 @@ btn.type = 'submit';
 btn.className = 'button';
 
 const handleSelection = () => {
+  wrapper.classList.remove('hidden');
+
+  if (select.value === '') {
+    wrapper.classList.toggle('hidden');
+    console.log('Funcionando hidden');
+  }
+
   if (select.value === 'Distancia' || 'Tiempo' || 'Velocidad') {
     input1.type = 'number';
     input2.type = 'number';
     btn.textContent = 'Cacular';
-    wrapper.classList.remove('hidden');
     subTitle.textContent = `${select.value} de un vehiculo en movimiento constante.`;
 
     wrapper.appendChild(input1);
@@ -24,14 +30,27 @@ const handleSelection = () => {
 
     console.log('funcionando');
   }
+
+  if (select.value === 'table') {
+    input1.type = 'number';
+    btn.textContent = 'Cacular';
+    subTitle.textContent = `Algoritmo que me permita escribir un número y muestre la tabla de multiplicar de ese número (1 - 12).`;
+
+    wrapper.appendChild(input1);
+    wrapper.removeChild(input2);
+    wrapper.appendChild(btn);
+
+    console.log('funcionando');
+  }
 };
 
 const handleCalculate = (e) => {
   e.preventDefault();
+
   wrapper.classList.remove('hidden');
+  result.classList.remove('hidden');
 
   if (select.value === 'Distancia') {
-    result.classList.remove('hidden');
     result.textContent = `Resultado: El carro mantenia una velocidad de ${
       input1.value
     } km/h en un tiempo de ${
@@ -65,6 +84,15 @@ const handleCalculate = (e) => {
     ).toFixed(2)} km.`;
     input1.value = '';
     input2.value = '';
+  }
+
+  if (select.value === 'table') {
+    const tableArr = [];
+    for (let i = 1; i <= 12; i++) {
+      const tableResult = `${input1.value} × ${i} = ${i * input1.value}`;
+      tableArr.push(tableResult);
+    }
+    result.textContent = `Resultado: ${tableArr.join(', ')}`;
   }
 };
 
