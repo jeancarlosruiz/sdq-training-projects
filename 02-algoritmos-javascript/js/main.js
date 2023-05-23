@@ -1,4 +1,6 @@
 import './attribution';
+import { morseCode } from './morseCode';
+import { textCode } from './textCode';
 
 const select = document.querySelector('.select');
 const form = document.querySelector('.form');
@@ -17,7 +19,6 @@ const handleSelection = () => {
 
   if (select.value === '') {
     wrapper.classList.toggle('hidden');
-    console.log('Funcionando hidden');
   }
 
   if (select.value === 'Distancia' || 'Tiempo' || 'Velocidad') {
@@ -29,8 +30,6 @@ const handleSelection = () => {
     wrapper.appendChild(input1);
     wrapper.appendChild(input2);
     wrapper.appendChild(btn);
-
-    console.log('funcionando');
   }
 
   if (select.value === 'table') {
@@ -41,8 +40,60 @@ const handleSelection = () => {
     wrapper.appendChild(input1);
     wrapper.removeChild(input2);
     wrapper.appendChild(btn);
+  }
 
-    console.log('funcionando');
+  if (select.value === 'morse') {
+    input1.type = 'text';
+    wrapper.removeChild(input2);
+    btn.textContent = 'Traducir';
+    subTitle.textContent = 'Algoritmo para transformar texto en Código Morse.';
+  }
+
+  if (select.value === 'text') {
+    input1.type = 'text';
+    wrapper.removeChild(input2);
+    btn.textContent = 'Traducir';
+    subTitle.textContent = 'Algoritmo para transformar codigo morse en texto.';
+  }
+
+  if (select.value === 'odd') {
+    input1.type = 'number';
+    wrapper.removeChild(input2);
+    btn.textContent = 'Calcular';
+    subTitle.textContent =
+      'Algoritmo que me permita escribir un número y me retorne una lista de los números primos desde cerohasta el número indicado.';
+  }
+
+  if (select.value === 'binario') {
+    input1.type = 'number';
+    wrapper.removeChild(input2);
+    btn.textContent = 'Calcular';
+    subTitle.textContent =
+      'Algoritmo que me permita escribir un número decimal y me retorne el número convertido en binario.';
+  }
+
+  if (select.value === 'descendente') {
+    input1.type = 'number';
+    wrapper.removeChild(input2);
+    btn.textContent = 'Calcular';
+    subTitle.textContent =
+      'Algoritmo que me permita escribir un número y me retorne una lista de números desde 1 hasta el número indicado';
+  }
+
+  if (select.value === 'ascendente') {
+    input1.type = 'number';
+    wrapper.removeChild(input2);
+    btn.textContent = 'Calcular';
+    subTitle.textContent =
+      'Algoritmo que me permita escribir un número y me retorne una lista de números desde el número indicado hasta 1';
+  }
+
+  if (select.value === 'odd-even') {
+    input1.type = 'number';
+    wrapper.removeChild(input2);
+    btn.textContent = 'Calcular';
+    subTitle.textContent =
+      'Algoritmo que me permita escribir un número y me retorne una lista de números desde 1 hasta el número indicado separando pares e impares.';
   }
 };
 
@@ -95,6 +146,109 @@ const handleCalculate = (e) => {
       tableArr.push(tableResult);
     }
     result.textContent = `Resultado: ${tableArr.join(', ')}`;
+  }
+
+  if (select.value === 'morse') {
+    const text = input1.value;
+    let translatedText = '';
+
+    for (let c of text) {
+      translatedText =
+        c == ' '
+          ? (translatedText += ' ')
+          : (translatedText += `(${morseCode[c.toLocaleLowerCase()]})`);
+    }
+    result.textContent = translatedText;
+  }
+
+  if (select.value === 'text') {
+    const text = input1.value;
+    let translatedMorse = text
+      .split(' ')
+      .map((letter) => textCode[letter] || ' ')
+      .join('');
+
+    result.textContent = translatedMorse;
+  }
+
+  if (select.value === 'odd') {
+    let oddArr = [];
+    const num = input1.value;
+
+    for (let i = 0; i <= num; i++) {
+      if (i % 2 === 1) {
+        oddArr.push(i);
+      }
+    }
+
+    result.textContent = `Numeros Primos: ${oddArr.join(', ')}`;
+  }
+
+  if (select.value === 'binario') {
+    let numeroDecimal;
+    let divisor = 2;
+    numeroDecimal = input1.value;
+    let numeroSalida = '';
+    while (numeroDecimal >= 2) {
+      let cociente = Math.trunc(numeroDecimal / divisor);
+      let residuo = numeroDecimal % divisor;
+      numeroSalida += residuo.toString();
+      numeroDecimal = cociente;
+    }
+
+    let auxiliar = numeroDecimal.toString();
+    numeroSalida += auxiliar;
+
+    console.log(numeroSalida, auxiliar);
+
+    result.textContent = `Resultado: ${numeroSalida
+      .split('')
+      .reverse()
+      .join('')}`;
+  }
+
+  if (select.value === 'descendente') {
+    const num = input1.value;
+
+    let numList = [];
+    for (let i = 0; i <= num; i++) {
+      numList.push(i);
+    }
+
+    result.textContent = `int = ${input1.value}; out = ${numList.join(',')}`;
+
+    input1.value = '';
+  }
+
+  if (select.value === 'ascendente') {
+    const num = input1.value;
+
+    let numList = [];
+
+    for (let i = num; i >= 1; i--) {
+      numList.push(i);
+    }
+
+    result.textContent = `int = ${input1.value}; out = ${numList.join(',')}`;
+
+    input1.value = '';
+  }
+
+  if (select.value === 'odd-even') {
+    const num = input1.value;
+
+    let evenList = [];
+    let oddList = [];
+
+    for (let i = num; i >= 1; i--) {
+      i % 2 === 0 ? evenList.push(i) : oddList.push(i);
+    }
+
+    result.textContent = `Int = ${num} outEven = ${evenList.join(
+      ','
+    )} ; outOdd = ${oddList.join(',')}`;
+
+    input1.value = '';
   }
 };
 
