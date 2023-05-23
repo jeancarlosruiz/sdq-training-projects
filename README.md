@@ -13,7 +13,7 @@ Actividades a realizadas
 | Número | Proyecto               | Código                                                                                                 | Web                                                        |
 | ------ | ---------------------- | ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------- |
 | `01`   | Calculadora Geometrica | [Ver](https://github.com/jeancarlosruiz/sdq-training-projects/tree/main/01-calculadora-area-perimetro) | [Visitar](https://calculadora-geometrica-sdq.netlify.app/) |
-| `02`   | Algoritmos JavaScript  | [Ver]()                                                                                                | [Visitar]()                                                |
+| `02`   | Algoritmos JavaScript  | [Ver](https://github.com/jeancarlosruiz/sdq-training-projects/tree/main/02-algoritmos-javascript)      | [Visitar](https://javascript-algoritmos.netlify.app/)      |
 
 ## Contenido:
 
