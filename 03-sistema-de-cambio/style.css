@@ -14,18 +14,13 @@
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+li {
+  list-style: none;
 }
 
 body {
   margin: 0;
-  display: flex;
+  display: grid;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -36,11 +31,41 @@ h1 {
   line-height: 1.1;
 }
 
-#app {
+main {
   max-width: 1280px;
-  margin: 0 auto;
+  margin: 2rem auto;
   padding: 2rem;
   text-align: center;
+  border-radius: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1em;
+  margin: 2em 0;
+  padding: 1em;
+}
+
+input {
+  width: 100%;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  border: none;
+  font-size: 1em;
+  outline: transparent;
+}
+
+select {
+  padding: 0.5em 1em;
+  border-radius: 10px;
+  border: none;
+  font-size: 1em;
+  outline: transparent;
 }
 
 .logo {
@@ -49,22 +74,17 @@ h1 {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.vanilla:hover {
   filter: drop-shadow(0 0 2em #f7df1eaa);
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
 button {
+  width: max-content;
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -76,11 +96,56 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #f7df1eaa;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin: 2em 0;
+  padding: 1em;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  border: 1px solid #f7df1eaa;
+  padding: 0.5em 1em;
+}
+
+.payment.hidden {
+  display: none;
+}
+
+.payment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.payment-method {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.payment-method input {
+  width: 50%;
+}
+
+.error {
+  border: 1px solid red;
 }
 
 @media (prefers-color-scheme: light) {

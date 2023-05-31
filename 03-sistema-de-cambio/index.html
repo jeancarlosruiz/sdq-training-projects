@@ -4,10 +4,41 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <meta name="description" content="Sistema de cambio" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Sistemas de cambios</title>
   </head>
   <body>
-    <div id="app"></div>
+    <main class="main">
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+        target="_blank"
+      >
+        <img
+          src="./javascript.svg"
+          class="logo vanilla"
+          alt="JavaScript logo"
+        />
+      </a>
+      <h1>Sistema de Cambios!</h1>
+      <form class="form" action="#">
+        <input class="description" type="text" placeholder="Descripción" />
+        <input class="amount" type="number" placeholder="Monto" />
+        <button class="submit-btn" type="submit">Agregar</button>
+      </form>
+
+      <div class="payment hidden">
+        <ul class="list"></ul>
+        <div class="payment-method">
+          <h3 class="total">Total: <span class="total-amount">0</span></h3>
+          <input class="cash" type="number" placeholder="Efectivo" />
+          <button class="payment-btn">Pagar</button>
+        </div>
+        <ul class="list-change">
+          <span>Cambio</span>
+        </ul>
+      </div>
+    </main>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
