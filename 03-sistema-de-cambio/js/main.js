@@ -1,3 +1,6 @@
+'use strict'
+
+// Nombramos las constantes y variables
 const form = document.querySelector('.form');
 const description = document.querySelector('.description');
 const amount = document.querySelector('.amount');
@@ -12,22 +15,49 @@ const pay = document.querySelector('.payment-btn');
 
 let prevAmount = 0;
 
+// Resultado de cambio fuera para que sea global
+let result = {};
 
-const deleteItem = (e) => {
-  const item = e.target.parentElement;
-  const itemAmount = item.querySelector('.item-amount').textContent.slice(1);
+const amountChange = (cash, totalAmount) => {
+  let change = parseInt(cash) - totalAmount;
 
-  item.remove();
-  prevAmount -= itemAmount
+  // Tipos de billetes y modenas
+  let coins = [2000, 1000, 500, 200, 100, 50, 25, 10, 5, 1]
 
-  total.textContent = `$${prevAmount}`;
+  // Para cada tipo de moneda...
+  for (let i = 0; i < coins.length; i++) {
+    const coin = coins[i];
+    const coinQuantity = Math.floor(change / coin);
 
-  if (prevAmount === 0) {
-    payment.classList.add('hidden');
+    if (coinQuantity > 0) {
+      result[coin] = coinQuantity;
+      change -= coin * coinQuantity;
+    }
   }
 
-  console.log(prevAmount);
+  return result
+};
 
+// Funcion para eliminar un item de la lista.
+const deleteItem = (e) => {
+  // Obtener el elemento padre del boton
+  const item = e.target.parentElement;
+  // Obtener el valor del item y le quita el signo de dolar
+  const itemAmount = item.querySelector('.item-amount').textContent.slice(1);
+
+  // Eliminar el item de la lista
+  item.remove();
+
+  // Restar el valor del item eliminado al total.
+  prevAmount -= itemAmount
+  // Mostrar el total actualizado
+  total.textContent = `$${prevAmount}`;
+
+  // Si el total es igual a 0, ocultar el pago y el cambio
+  if (prevAmount === 0) {
+    payment.classList.add('hidden');
+    listChange.innerHTML = '';
+  }
 };
 
 form.addEventListener('submit', (e) => {
@@ -53,19 +83,16 @@ form.addEventListener('submit', (e) => {
 
     // Agregar el elmento a la lista
     list.appendChild(li);
-
-    const itemAmount = document.querySelectorAll('.item-amount');
-    const deleteBtn = document.querySelectorAll('.item-delete-btn');
-
     
-
-    itemAmount.forEach((item) => {
-      prevAmount += parseInt(item.textContent.slice(1));
-    });
-
+    // Sumar el valor del item al total
+    prevAmount += parseInt(amount.value)
+    
     // Mostrar el total
     total.textContent = `$${prevAmount}`;
 
+  
+    // Obtener todos los botones de eliminar  
+    const deleteBtn = document.querySelectorAll('.item-delete-btn')
     deleteBtn.forEach((btn) => {
       // Agregar el evento click con la función deleteItem
       btn.addEventListener('click', deleteItem);
@@ -77,52 +104,47 @@ form.addEventListener('submit', (e) => {
     // Limpiar los campos
     description.value = '';
     amount.value = '';
-    console.log(prevAmount);
-    console.log(arr);
   }
 });
 
-// Resultado de cambio fuera para que sea global
-let result = {};
-
-const amountChange = (cash, totalAmount) => {
-  let change = parseInt(cash) - totalAmount;
-
-  // Tipos de billetes y modenas
-  let coins = [1, 5, 10, 25, 50, 100, 200, 500, 1000, 2000];
-
-  // Para cada tipo de moneda...
-  for (let i = 0; i < coins.length; i++) {
-    const coin = coins[i];
-    const coinQuantity = Math.floor(change / coin);
-
-    if (coinQuantity > 0) {
-      result[coin] = coinQuantity;
-      change -= coin * coinQuantity;
-    }
-  }
-
-  return result;
-};
-
 pay.addEventListener('click', () => {
+
   amountChange(cash.value, prevAmount);
 
-  if (Object.keys(result).length === 0) {
-    const li = document.createElement('li');
-    li.innerHTML = `<span>No hay cambio</span>`;
-
-    listChange.appendChild(li);
-  } else {
+  // Si el pago es menor al total
+  if (parseInt(cash.value)  < prevAmount) {
     listChange.innerHTML = '';
-  }
 
-  for (const [key, i] of Object.entries(result)) {
     const li = document.createElement('li');
-    li.innerHTML = `<span>${key}</span> x <span>$${i}</span>`;
+    li.innerHTML = `<span>El pago es menor al total</span>`;
+
+    listChange.appendChild(li);
+  } 
+
+  // Si el pago es igual al total
+  if(parseInt(cash.value)  === prevAmount) {
+    listChange.innerHTML = '';
+
+    const li = document.createElement('li');
+    li.innerHTML = `<span>Gracias por su compra!</span>`;
 
     listChange.appendChild(li);
   }
 
+  // Si el pago es mayor al total, realizar el cambio
+  if(parseInt(cash.value) > prevAmount) {
+    listChange.innerHTML = '';
+
+    // Proceso de cambio
+    for (const [key, i] of Object.entries(result)) {
+      const li = document.createElement('li');
+      li.innerHTML = `<span>${i}</span> x <span>$${key}</span>`;
+
+      // Agregar el elmento a la lista
+      listChange.appendChild(li);
+    }
+  }  
+
+  // Limpiar el campo
   cash.value = '';
 });

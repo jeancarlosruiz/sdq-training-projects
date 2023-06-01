@@ -10,10 +10,11 @@ Actividades a realizadas
 
 ## Actividades ⬇️
 
-| Número | Proyecto               | Código                                                                                                 | Web                                                        |
-| ------ | ---------------------- | ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------- |
-| `01`   | Calculadora Geometrica | [Ver](https://github.com/jeancarlosruiz/sdq-training-projects/tree/main/01-calculadora-area-perimetro) | [Visitar](https://calculadora-geometrica-sdq.netlify.app/) |
-| `02`   | Algoritmos JavaScript  | [Ver](https://github.com/jeancarlosruiz/sdq-training-projects/tree/main/02-algoritmos-javascript)      | [Visitar](https://javascript-algoritmos.netlify.app/)      |
+| Número | Proyecto                  | Código                                                                                                 | Web                                                        |
+| ------ | ------------------------- | ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------- |
+| `01`   | Calculadora Geometrica    | [Ver](https://github.com/jeancarlosruiz/sdq-training-projects/tree/main/01-calculadora-area-perimetro) | [Visitar](https://calculadora-geometrica-sdq.netlify.app/) |
+| `02`   | Algoritmos JavaScript     | [Ver](https://github.com/jeancarlosruiz/sdq-training-projects/tree/main/02-algoritmos-javascript)      | [Visitar](https://javascript-algoritmos.netlify.app/)      |
+| `03`   | Sistemas de Cambios (DOP) | [Ver](https://github.com/jeancarlosruiz/sdq-training-projects/tree/main/03-sistema-de-cambio)          | [Visitar](https://sistemas-de-cambio-dop.netlify.app/)     |
 
 ## Contenido:
 
